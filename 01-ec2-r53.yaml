@@ -7,10 +7,7 @@
     ZONE_ID: Z09600663N3RJY2DUWCBB # replace with your ID
     DOMAIN_NAME: dawsuday.fun
     instances: 
-    - mongodb 
-    - redis
     - mysql
-    - rabbitmq
   tasks: 
     - name: to create instances
       amazon.aws.ec2_instance:
