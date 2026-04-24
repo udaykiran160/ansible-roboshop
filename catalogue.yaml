@@ -36,3 +36,7 @@
       src: /tmp/catalogue.zip
       dest: /app
       remote_src: yes
+ 
+  - name: to install dependencies
+    community.general.npm:
+      path: /app
