@@ -45,4 +45,18 @@
     ansible.builtin.copy:
       src: catalogue.service
       dest: /etc/systemd/system/catalogue.service
+  
+  - name: copy mongo repo
+    ansible.builtin.copy:
+      src: mongo.repo
+      dest: /etc/yum.repos.d/mongo.repo
+
+  - name: install mongodb client
+    ansible.builtin.package:
+      name: mongodb-mongosh
+      state: present
+
+  - name: connnect to mongodb catalogue
+    ansible.builtin.command: mongosh mongodb.daws86s.fun --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
+    register: catalogue_output
 
