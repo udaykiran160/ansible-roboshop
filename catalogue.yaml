@@ -65,6 +65,6 @@
       msg: "{{ catalogue_output }}"
 
   - name: load products into mongodb
-    ansible.builtin.shell: mongosh --host mongodb.daws86s.fun </app/db/master-data.js
+    ansible.builtin.shell: mongosh --host mongodb.dawsuday.fun </app/db/master-data.js
     when: catalogue_output.stdout | int < 0
 
