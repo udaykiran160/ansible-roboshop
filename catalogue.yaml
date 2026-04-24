@@ -40,3 +40,9 @@
   - name: to install dependencies
     community.general.npm:
       path: /app
+
+  - name: copy catalogue services
+    ansible.builtin.copy:
+      src: catalogue.service
+      dest: /etc/systemd/system/catalogue.service
+
