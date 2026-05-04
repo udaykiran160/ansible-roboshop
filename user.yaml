@@ -37,7 +37,7 @@
       state: absent
 
   - name: download user application
-    ansible.builtin.geturl: 
+    ansible.builtin.get_url: 
       dest: /tmp/user.zip
       url: https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip 
   
